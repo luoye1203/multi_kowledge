@@ -12,6 +12,8 @@ import java.util.concurrent.*;
 
 @Service
 public class ThreadTestService {
+
+
     private final Logger logger = Logger.getLogger(this.getClass());
 
     public void jionMethodTest() {
