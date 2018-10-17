@@ -1,0 +1,28 @@
+spring:
+  datasource:
+    type: com.zaxxer.hikari.HikariDataSource
+    poolName: hikariPCpool
+    connection-test-query: select 1 from dual
+    hikari:
+        connection-timeout: 30000
+        idle-timeout: 10000
+        max-lifetime: 1800000
+        maximum-pool-size: 15
+        autoCommit: false
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/lht_test?&useUnicode=true&characterEncoding=utf8
+    username: root
+    password: 198412
+
+
+server:
+  tomcat:
+#  max-http-header-size: 655360
+  port: 8080
+
+mybatis:
+    mapper-locations: classpath:mapper/*.xml
+    config-location: classpath:mapper/mybatisConfig/mybatisConfig.xml
+
+
+
