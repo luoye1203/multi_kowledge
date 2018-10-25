@@ -49,6 +49,24 @@ public class DateController {
 		return response;
 	}
 
+	@RequestMapping(value = "/formatStandard", method = RequestMethod.GET)
+	@ApiOperation(value = "通用日期格式测试 ",notes = "")
+	@ApiParam(required = true)
+	@ApiImplicitParams(
+			{
+			}
+	)
+	public BaseResponse formatStandardTest() {
+		try {
 
+			dateService.formatStandardTest();
+
+		} catch (Exception e) {
+			logger.error("日期格式测试出现bug", e);
+			return BaseResponse.buildResponse().setCode(201).setMessage("测试失败").build();
+		}
+		BaseResponse response=BaseResponse.buildResponse().setCode(200).setMessage("测试成功").build();
+		return response;
+	}
 
 }
